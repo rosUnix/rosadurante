@@ -1,0 +1,19 @@
+<div class="wrapper-footer">
+	<div class="contact-details-wrapper">
+		<ul class="contact-details">
+			{% for detail in contact_details %}
+				{% include "website/contact_detail.html" %}
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="social-networks-wrapper">
+		<ul class="social-networks">
+			{% for network in social_networks %}
+				{% include "website/social_network.html" %}
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="copyright">
+		<span>{{ copyright }}</span>
+	</div>
+</div>
