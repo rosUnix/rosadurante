@@ -44,7 +44,7 @@ def social_networks(request):
 		'username': 'rosunix',
 		'icon': '/static/img/twitter_icon.png'
 	}, {
-		'social_name': 'instagram',
+		'social_name': 'camera',
 		'url_base': 'http://instagram.com/',
 		'username': 'rosunix',
 		'icon': '/static/img/instagram_icon.png'

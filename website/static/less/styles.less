@@ -3,6 +3,7 @@
 /* ---------- ---------- ---------- */
 
 @sky-blue: #128CC9;
+@soft-grey: #cccccc;
 @mid-grey: #666666;
 @dark-grey: #111111;
 
@@ -10,6 +11,37 @@
 /*  Mixins                          */
 /* ---------- ---------- ---------- */
 
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-o-border-radius: @radius;
+	-ms-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-sizing(@box) {
+	-webkit-box-sizing: @box;
+	-moz-box-sizing: @box;
+	-o-box-sizing: @box;
+	-ms-box-sizing: @box;
+	box-sizing: @box;
+}
+
+.header-right-side(@margin-top) {
+	.box-sizing(border-box);
+	display: block;
+	float: left;
+	max-width: 65%;
+	width: 65%;
+	margin-top: @margin-top;
+	padding-left: 30px;
+}
+
+.no-list-style() {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
 /* ---------- ---------- ---------- */
 /*  Styles                          */
@@ -20,4 +52,105 @@ body {
 	font-size: 14pt;
 	color: @dark-grey;
 	-webkit-print-color-adjust:exact;
+
+	margin: 60px auto;
+	max-width: 1024px;
+
+	.social-networks-wrapper {
+		.social-networks {
+			.no-list-style();
+			text-align: center;
+
+			li {
+				.box-sizing(border-box);
+				.border-radius(25px);
+				display: inline-block;
+				padding: 5px;
+				margin-left: 20px;
+				border: 1px solid @soft-grey;
+
+				a {
+					span {
+						font-size: 26px;
+						color: @soft-grey;
+						text-decoration: none;
+					}
+				}
+
+				&:hover {
+					border-color: @sky-blue;
+					background-color: @sky-blue;
+
+					span {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	header {
+		margin: 0px 30px;
+
+		.main-picture {
+			display: block;
+			max-width: 35%;
+			float: left;
+
+			img {
+				.border-radius(6px);
+				.box-sizing(border-box);
+				border: 4px solid @sky-blue;
+			}
+		}
+
+		.main-name {
+			.header-right-side(70px);
+
+			.full_name {
+				position: relative;
+				min-height: 120px;
+				border-bottom: 3px solid @soft-grey;
+			}
+
+			h1 {
+				position: absolute;
+				bottom: 0;
+				width: 90%;
+				font-size: 48px;
+				font-weight: normal;
+				margin: 0px;
+				color: @mid-grey;
+
+				&::first-letter {
+					color: @sky-blue;
+				}
+
+				&.last_name {
+					padding: 0;
+					z-index: 5;
+					width: 78%;
+					left: 85px;
+				}
+			}
+
+			.position {
+				text-align: right;
+				padding-top: 5px;
+				color: @sky-blue;
+				font-size: 22px;
+			}
+		}
+
+		.social-networks-wrapper {
+			.header-right-side(50px);
+		}
+	}
+
+	.container[role=main] {
+		clear: both;
+		margin-top: 30px;
+	}
+
+
 }

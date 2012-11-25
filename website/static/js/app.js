@@ -50,9 +50,9 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		'<ul>{{#list}}<li><span class"label">{{ name }}</span>' +
 	    		'<span class="value">{{ value }}</span></li>{{/list}}</ul>' +
 	    		'</div>',
-	    	social_networks_template: '<li>' +
-	    		'<a href="{{ url_base }}{{ username }}" target="_blank" class="{{ social_name }}">' +
-	    		'<span>{{ social_name }}</span></a>' +
+	    	social_networks_template: '<li class="{{ social_name }}">' +
+	    		'<a href="{{ url_base }}{{ username }}" target="_blank">' +
+	    		'<span class="icon-{{ social_name }}"></span></a>' +
 	    		'</li>',
 
 	  		initialize: function (options) {

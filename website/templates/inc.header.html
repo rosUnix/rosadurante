@@ -3,12 +3,14 @@
 		<img alt="{{ first_name }} {{ last_name }}" src="{{ STATIC_URL }}{{ main_picture }}" />
 	</div>
 	<div class="main-name">
-		<h1>{{ first_name }} {{ last_name }}</h1>
+		<div class="full_name">
+			<h1 class="first_name">{{ first_name }}</h1><h1 class="last_name">{{ last_name }}</h1>
+		</div>
 		<div class="position">
 			<span>{{ position }}</span>
 		</div>
 	</div>
-	<div class="social-networks-wraper">
+	<div class="social-networks-wrapper">
 		<ul class="social-networks">
 		</ul>
 	</div>
