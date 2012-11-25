@@ -10,17 +10,7 @@ def index(request):
 		'last_name': 'Durante',
 		'position': 'FrontEnd Developer',
 		'main_picture':  'img/picture.png',
-		'description': '',
-		'contact_details': [{
-			'type': 'email',
-			'value': 'me@rosadurante.com'
-		}, {
-			'type': 'phone',
-			'value': '07 426 429 682'
-		}, {
-			'type': 'city',
-			'value': 'London'
-		}]
+		'copyright': ' 2012 Rosa Durante',
 	}
 
 	return render(request, "website/index.html", context)
@@ -32,22 +22,22 @@ def social_networks(request):
 		'social_name': 'linkedin',
 		'url_base': 'http://www.linkedin.com/in/',
 		'username': 'rdurantelerate',
-		'icon': '/static/img/linkedin_icon.png'
 	}, {
 		'social_name': 'github',
 		'url_base': 'http://github.com/',
 		'username': 'rosunix',
-		'icon': '/static/img/github_icon.png'
 	}, {
 		'social_name': 'twitter',
 		'url_base': 'http://www.twitter.com/',
 		'username': 'rosunix',
-		'icon': '/static/img/twitter_icon.png'
 	}, {
 		'social_name': 'camera',
 		'url_base': 'http://instagram.com/',
 		'username': 'rosunix',
-		'icon': '/static/img/instagram_icon.png'
+	}, {
+		'social_name': 'envelope-alt',
+		'url_base': 'mailto:',
+		'username': 'me@rosadurante.com',
 	}]
 
 	return HttpResponse(json.dumps(context), 'application/json')
