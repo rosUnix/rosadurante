@@ -3,8 +3,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
   	/** Define all libraries we go to use along the frontend.
         That's means, jQuery, Underscore and Backbone. **/
 
-    var BaseView = Backbone.View.extend({	
-	    	tagName: 'li',
+    var BaseView = Backbone.View.extend({
 
 	    	initialize: function (options) {
 	    		this.el = options.el;
@@ -28,7 +27,9 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    	render: function () {
 	    		var self = this;
 	    		this.collection.each(function (model) {
-	    			self.$el.append(self.render_element(model));
+    				self.$el.each( function (i, view) {
+    					$(view).append(self.render_element(model));
+    				});
 	    		});
 	    	},
 
@@ -39,18 +40,20 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 
     	appView = Backbone.View.extend({
 
-    		exp_template: '' +
+    		exp_template: '<li>' +
     			'<label>{{ date_begin }} - {{ date_end }}</label>' +
 	    		'<p class="highlight">{{ company }}</p><p>{{ position }}</p>' +
-	    		'<p class="description">{{ description }}</p>',
-	    	skills_template: '' +
-	    		'<div><h3>{{ name }}</h3>' +
+	    		'<p class="description">{{ description }}</p>' +
+	    		'</li>',
+	    	skills_template: '<div>' +
+	    		'<h3>{{ name }}</h3>' +
 	    		'<ul>{{#list}}<li><span class"label">{{ name }}</span>' +
 	    		'<span class="value">{{ value }}</span></li>{{/list}}</ul>' +
 	    		'</div>',
-	    	social_networks_template: '' +
-	    		'<a href="{{ url_base }}{{ username }}" target="_blank">' +
-	    		'<img alt="{{ name }}" src="{{ icon }} /></a>',
+	    	social_networks_template: '<li>' +
+	    		'<a href="{{ url_base }}{{ username }}" target="_blank" class="{{ social_name }}">' +
+	    		'<span>{{ social_name }}</span></a>' +
+	    		'</li>',
 
 	  		initialize: function (options) {
 

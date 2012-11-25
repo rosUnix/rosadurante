@@ -9,7 +9,7 @@ def index(request):
 		'first_name': 'Rosa',
 		'last_name': 'Durante',
 		'position': 'FrontEnd Developer',
-		'main_picture':  'img/picture.jpg',
+		'main_picture':  'img/picture.png',
 		'description': '',
 		'contact_details': [{
 			'type': 'email',
@@ -29,22 +29,22 @@ def index(request):
 def social_networks(request):
 
 	context = [{
-		'social_name': 'Linkedin',
+		'social_name': 'linkedin',
 		'url_base': 'http://www.linkedin.com/in/',
 		'username': 'rdurantelerate',
 		'icon': '/static/img/linkedin_icon.png'
 	}, {
-		'social_name': 'Github',
+		'social_name': 'github',
 		'url_base': 'http://github.com/',
 		'username': 'rosunix',
 		'icon': '/static/img/github_icon.png'
 	}, {
-		'social_name': 'Twitter',
+		'social_name': 'twitter',
 		'url_base': 'http://www.twitter.com/',
 		'username': 'rosunix',
 		'icon': '/static/img/twitter_icon.png'
 	}, {
-		'social_name': 'Instagram',
+		'social_name': 'instagram',
 		'url_base': 'http://instagram.com/',
 		'username': 'rosunix',
 		'icon': '/static/img/instagram_icon.png'
