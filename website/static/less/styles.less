@@ -3,9 +3,10 @@
 /* ---------- ---------- ---------- */
 
 @sky-blue: #128CC9;
+@extra-soft-grey: #f0f0f0;
 @soft-grey: #cccccc;
 @mid-grey: #666666;
-@dark-grey: #111111;
+@dark-grey: #333333;
 
 /* ---------- ---------- ---------- */
 /*  Mixins                          */
@@ -56,6 +57,9 @@ body {
 	margin: 60px auto;
 	max-width: 1024px;
 
+	p, span, label { color: @dark-grey; }
+	a { color: @sky-blue; }
+
 	.social-networks-wrapper {
 		.social-networks {
 			.no-list-style();
@@ -79,10 +83,9 @@ body {
 
 				&:hover {
 					border-color: @sky-blue;
-					background-color: @sky-blue;
 
 					span {
-						color: white;
+						color: @sky-blue;
 					}
 				}
 			}
@@ -91,6 +94,7 @@ body {
 
 	header {
 		margin: 0px 30px;
+		overflow: hidden;
 
 		.main-picture {
 			display: block;
@@ -137,8 +141,11 @@ body {
 			.position {
 				text-align: right;
 				padding-top: 5px;
-				color: @sky-blue;
 				font-size: 22px;
+
+				span {
+					color: @sky-blue;
+				}
 			}
 		}
 
@@ -149,7 +156,114 @@ body {
 
 	.container[role=main] {
 		clear: both;
-		margin-top: 30px;
+		margin-top: 50px;
+		overflow: hidden;
+
+		.content section {
+			.box-sizing(border-box);
+			display: block;
+			float: left;
+			width: 50%;
+			padding: 0px 30px;
+
+			header {
+				margin: 0;
+
+				h3 {
+					bottom: 0;
+					font-size: 32px;
+					font-weight: normal;
+					margin: 0px;
+					color: @sky-blue;
+					padding: 0px;
+					// background-color: #f8f8fb;
+					// border-bottom: 1px solid @soft-grey;
+
+					&:before {
+						content: "";
+						display: inline-block;
+						height: 3px;
+						width: 90px;
+						background-color: @sky-blue;
+						vertical-align: middle;
+						margin-right: 10px;
+					}
+				}
+			}
+
+			ul {
+				.no-list-style();
+			}
+
+			.experience {
+				margin-top: 20px;
+
+				li {
+					margin-bottom: 10px;
+
+					label { font-size: 16px; }
+					p {
+						margin: 5px 0;
+						padding-left: 10px;
+						display: inline-block;
+					}
+					.highlight { color: @sky-blue; }
+					.description { font-style: italic; }
+				}
+			}
+
+			.skills {
+				margin-top: 20px;
+
+				h3 {
+					font-weight: normal;
+					border-bottom: 1px solid @soft-grey;
+					color: @soft-grey;
+				}
+				li {
+					margin-bottom: 4px;
+
+					p {
+						display: inline-block;
+						margin: 0px;
+					}
+
+					.label {
+						padding: 2px 5px;
+						background-color: @extra-soft-grey;
+						display: inline-block;
+						min-width: 90px;
+						margin-right: 10px;
+
+						&:hover {
+							color: white;
+							background-color: @mid-grey;
+						}
+					}
+
+					.blocks {
+						min-width: 60%;
+						min-height: 30px;
+						margin-right: 15px;
+					}
+
+					.value {
+						.border-radius(25px);
+						padding: 2px 5px;
+						color: @mid-grey;
+						min-width: 20px;
+						text-align: center;
+						background-color: @extra-soft-grey;
+
+
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		clear: both;
 	}
 
 

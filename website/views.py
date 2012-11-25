@@ -62,7 +62,7 @@ def skills(request):
 			'value': 3
 		}, {
 			'name': 'Backbone',
-			'value': 3.5
+			'value': 3
 		}, {
 			'name': 'jQuery',
 			'value': 4
@@ -71,7 +71,7 @@ def skills(request):
 			'value': 4,
 		}, {
 			'name': 'CSS3',
-			'value': 2
+			'value': 2.5
 		}, {
 			'name': 'Advanced CSS',
 			'value': 3.5

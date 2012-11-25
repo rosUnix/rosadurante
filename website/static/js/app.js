@@ -20,8 +20,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		};
 
 	    		var self = this;
-	    		this.collection.fetch({ success: function () { self.render() }});
-
+	    		this.collection.fetch({ success: function () { self.render(); } });
 	    	},
 
 	    	render: function () {
@@ -31,6 +30,8 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
     					$(view).append(self.render_element(model));
     				});
 	    		});
+
+	    		this.trigger('rendered');
 	    	},
 
 	    	render_element: function (model) {
@@ -47,8 +48,9 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		'</li>',
 	    	skills_template: '<div>' +
 	    		'<h3>{{ name }}</h3>' +
-	    		'<ul>{{#list}}<li><span class"label">{{ name }}</span>' +
-	    		'<span class="value">{{ value }}</span></li>{{/list}}</ul>' +
+	    		'<ul>{{#list}}<li><p class="label">{{ name }}</p>' +
+	    		'<p class="blocks {{ value }}"></p>' +
+	    		'<p class="value">{{ value }}</p></li>{{/list}}</ul>' +
 	    		'</div>',
 	    	social_networks_template: '<li class="{{ social_name }}">' +
 	    		'<a href="{{ url_base }}{{ username }}" target="_blank">' +
@@ -71,16 +73,16 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	  				el: this.$el.find('ul.social-networks'),
 	  				parent: this,
 	  				url: '/social_networks',
-	  				template: this.social_networks_template,
+	  				template: this.social_networks_template
 
 	  				/* TODO: behaviour */
 	  			});
 
 	  			this.skills = new BaseView({
-	  				el: this.$el.find('ul.skills'),
+	  				el: this.$el.find('div.skills'),
 	  				parent: this,
 	  				url: '/skills',
-	  				template: this.skills_template,
+	  				template: this.skills_template
 
 	  				/* TODO: behaviour */
 	  			});
