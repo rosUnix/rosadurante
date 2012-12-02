@@ -3,7 +3,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
   	/** Define all libraries we go to use along the frontend.
         That's means, jQuery, Underscore and Backbone. **/
 
-    var BaseView = Backbone.View.extend({
+    var baseView = Backbone.View.extend({
 
 	    	initialize: function (options) {
 	    		this.el = options.el;
@@ -39,6 +39,33 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    	}
     	}),
 
+    	skillView = baseView.extend({
+
+    		initialize: function (options) {
+    			baseView.prototype.initialize.call(this, options);
+
+    			this.bind('rendered', this.show_skills, this);
+    		},
+
+    		show_skills: function () {
+    			var self = this,
+    				i;
+    			this.collection.each( function (item) {
+    				item.get('list').forEach( function (skill) {
+    					debugger;
+    					$element = $(self.el).find('.' + skill.name.split(' ')[0] + ' .blocks');
+    					for (i = 1; i <= skill.value; i++) {
+    						$element.append('<div class="one-block"></div>');
+    					}
+    					if ($element.find('.one-block').length < skill.value) {
+    						// Means that Value has 0.5 more.
+    						$element.append('<div class="half-block"></div>');
+    					}
+    				});
+    			});
+    		}
+    	}),
+
     	appView = Backbone.View.extend({
 
     		exp_template: '<li>' +
@@ -48,8 +75,8 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		'</li>',
 	    	skills_template: '<div>' +
 	    		'<h3>{{ name }}</h3>' +
-	    		'<ul>{{#list}}<li><p class="label">{{ name }}</p>' +
-	    		'<p class="blocks {{ value }}"></p>' +
+	    		'<ul>{{#list}}<li class="{{ name }}"><div class="label"><p>{{ name }}</p></div>' +
+	    		'<div class="blocks"></div>' +
 	    		'<p class="value">{{ value }}</p></li>{{/list}}</ul>' +
 	    		'</div>',
 	    	social_networks_template: '<li class="{{ social_name }}">' +
@@ -62,14 +89,14 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	  			this.el = options.el;
 	  			this.$el = $(this.el);
 
-	  			this.experience = new BaseView({
+	  			this.experience = new baseView({
 	  				el: this.$el.find('ul.experience'),
 	  				parent: this,
 	  				url: '/experience',
 	  				template: this.exp_template
 	  			});
 
-	  			this.social_networks = new BaseView({
+	  			this.social_networks = new baseView({
 	  				el: this.$el.find('ul.social-networks'),
 	  				parent: this,
 	  				url: '/social_networks',
@@ -78,7 +105,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	  				/* TODO: behaviour */
 	  			});
 
-	  			this.skills = new BaseView({
+	  			this.skills = new skillView({
 	  				el: this.$el.find('div.skills'),
 	  				parent: this,
 	  				url: '/skills',
