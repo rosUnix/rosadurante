@@ -52,7 +52,6 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
     				i;
     			this.collection.each( function (item) {
     				item.get('list').forEach( function (skill) {
-    					debugger;
     					$element = $(self.el).find('.' + skill.name.split(' ')[0] + ' .blocks');
     					for (i = 1; i <= skill.value; i++) {
     						$element.append('<div class="one-block"></div>');
@@ -76,8 +75,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    	skills_template: '<div>' +
 	    		'<h3>{{ name }}</h3>' +
 	    		'<ul>{{#list}}<li class="{{ name }}"><div class="label"><p>{{ name }}</p></div>' +
-	    		'<div class="blocks"></div>' +
-	    		'<p class="value">{{ value }}</p></li>{{/list}}</ul>' +
+	    		'<div class="blocks"></div></li>{{/list}}</ul>' +
 	    		'</div>',
 	    	social_networks_template: '<li class="{{ social_name }}">' +
 	    		'<a href="{{ url_base }}{{ username }}" target="_blank">' +

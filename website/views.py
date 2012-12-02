@@ -11,6 +11,7 @@ def index(request):
 		'position': 'FrontEnd Developer',
 		'main_picture':  'img/picture.png',
 		'copyright': ' 2012 Rosa Durante',
+		'email': 'me@rosadurante.com',
 	}
 
 	return render(request, "website/index.html", context)
