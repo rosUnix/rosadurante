@@ -4,7 +4,7 @@ import os
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = not DEBUG
 
@@ -152,3 +152,8 @@ LOGGING = {
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
