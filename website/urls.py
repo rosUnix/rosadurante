@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -9,5 +9,4 @@ urlpatterns = patterns('',
     url(r'social_networks$', 'website.views.social_networks', name='social_networks'),
     url(r'skills$', 'website.views.skills', name='skills'),
     url(r'experience$', 'website.views.experience', name='experience'),
-    # url(r'^admin/', include(admin.site.urls)),
 )
