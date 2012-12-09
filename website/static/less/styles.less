@@ -209,8 +209,24 @@ body {
 
 	.container[role=main] {
 		clear: both;
-		margin-top: 50px;
+		margin-top: 40px;
 		overflow: hidden;
+
+		.content { overflow: hidden; }
+
+		.content article {
+			margin: 0 auto 40px;
+			max-width: 60%;
+			.description p {
+				margin: 0px;
+				font-size: 24px;
+				text-align: center;
+				span {
+					color: @sky-blue;
+				}
+			}
+
+		}
 
 		.content section {
 			.box-sizing(border-box);
@@ -359,8 +375,17 @@ body {
 			display: none;
 		}
 
-		.container[role=main] .content section {
-			width: 100%;
+		.container[role=main] {
+
+			.content article {
+				.description p {
+					font-size: 18px;
+				}
+			}
+
+			.content section {
+				width: 100%;
+			}
 		}
 
 		footer .copyright {

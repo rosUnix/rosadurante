@@ -12,6 +12,7 @@ def index(request):
 		'main_picture':  'img/picture.png',
 		'copyright': ' 2012 Rosa Durante',
 		'email': 'me@rosadurante.com',
+		'description': 'Hi there! I am an enthusiastic <span>frontend developer</span> currently living in <span>London, UK</span>. I really love to code in <span>JavaScript</span> and get a great look & feel with <span>CSS</span>. If you want to know more about me.. keep reading!'
 	}
 
 	return render(request, "website/index.html", context)
