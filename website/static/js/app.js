@@ -1,5 +1,5 @@
 define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, Backbone, Mustache) {
-  
+
   	/** Define all libraries we go to use along the frontend.
         That's means, jQuery, Underscore and Backbone. **/
 
@@ -15,8 +15,8 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		this.parent = options.parent;
 
 	    		this.collection = new Backbone.Collection();
-	    		this.collection.url = function () { 
-	    			return options.url; 
+	    		this.collection.url = function () {
+	    			return options.url;
 	    		};
 
 	    		var self = this;
@@ -69,7 +69,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 
     		exp_template: '<li>' +
     			'<label>{{ date_begin }} - {{ date_end }}</label>' +
-	    		'<p class="highlight">{{ company }}</p><p>{{ position }}</p>' +
+	    		'<p class="highlight"><a href="{{ company_url }}" target="_blank">{{ company }}</a></p><p>{{ position }}</p>' +
 	    		'<p class="description">{{ description }}</p>' +
 	    		'</li>',
 	    	skills_template: '<div>' +
@@ -114,7 +114,7 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	  		}
   		}),
 
-		app = new appView({ 
+		app = new appView({
 			el: $('html'),
 		});
 });
