@@ -1,0 +1,13 @@
+<div>
+    <h3>{{ group.name }}</h3>
+    <ul>
+        {% for skill in group.list %}
+        <li class="{{ skill.name }}">
+            <div class="label">
+                <p>{{ skill.name }}</p>
+            </div>
+            <div class="blocks"></div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -11,11 +11,19 @@
 		</article>
 		<section class="experience-wrapper">
 			<header><h3>Experience</h3></header>
-			<ul class="experience"></ul>
+			<ul class="experience">
+			{% for exp in experience %}
+				{% include "website/experience.html" %}
+			{% endfor %}
+			</ul>
 		</section>
 		<section class="skills-wrapper">
 			<header><h3>Skills</h3></header>
-			<div class="skills"></div>
+			<div class="skills">
+			{% for group in skills %}
+				{% include "website/skill.html" %}
+			{% endfor %}
+			</div>
 		</section>
 	</div>
 </div>
