@@ -15,6 +15,9 @@
 	</div>
 	<div class="social-networks-wrapper">
 		<ul class="social-networks">
+			{% for network in social_networks %}
+				{% include "website/social_network.html" %}
+			{% endfor %}
 		</ul>
 	</div>
 </div>

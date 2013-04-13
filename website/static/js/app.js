@@ -9,6 +9,9 @@ define('app', ['jquery', 'underscore', 'Backbone', 'Mustache'], function($, _, B
 	    		this.el = options.el;
 	    		this.$el = $(this.el);
 
+                // Remove default datas inside this block.
+                this.$el.children().remove();
+
 	    		_.bindAll(this, 'render', 'render_element');
 
 	    		this.template = options.template;
