@@ -396,4 +396,34 @@ body {
 		}
 	}
 
+	.error-wrapper {
+		margin: 0 auto;
+		max-width: 1024px;
+		padding: 150px 0;
+		.error {
+			margin: 0 30px;
+			position: relative;
+			.error {
+				font-size: 90px;
+				font-weight: 100;
+				color: @sky-blue;
+				margin: 5px 0;
+			}
+			.not-found {
+				margin: 5px 0;
+				text-align: right;
+				color: @mid-grey;
+				font-weight: normal;
+			}
+			.back {
+				position: absolute;
+				bottom: 50px;
+				width: 100%;
+				text-align: right;
+				border-bottom: 2px solid @mid-grey;
+				padding-bottom: 12px;
+			}
+		}
+	}
+
 }
