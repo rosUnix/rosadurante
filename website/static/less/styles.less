@@ -63,39 +63,115 @@ body {
 		text-decoration: none;
 	}
 
+	// .social-networks-wrapper {
+	// 	.social-networks {
+	// 		.no-list-style();
+	// 		text-align: center;
+
+	// 		li {
+	// 			.box-sizing(border-box);
+	// 			.border-radius(25px);
+	// 			display: inline-block;
+	// 			padding: 5px;
+	// 			margin-left: 20px;
+	// 			border: 1px solid @soft-grey;
+
+	// 			@media screen and (max-width: 820px) {
+	// 				margin-left: 10px;
+	// 			}
+
+	// 			a {
+	// 				span {
+	// 					font-size: 26px;
+	// 					color: @soft-grey;
+	// 					text-decoration: none;
+	// 				}
+	// 			}
+
+	// 			&:hover {
+	// 				border-color: @sky-blue;
+
+	// 				span {
+	// 					color: @sky-blue;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
 	.social-networks-wrapper {
 		.social-networks {
 			.no-list-style();
-			text-align: center;
+  			padding: 0px 10px;
+  			text-align: center;
+  			border-radius: 10px;
 
-			li {
-				.box-sizing(border-box);
-				.border-radius(25px);
-				display: inline-block;
-				padding: 5px;
-				margin-left: 20px;
-				border: 1px solid @soft-grey;
+  			li {
+  				.box-sizing(border-box);
+  				.border-radius(30px);
+  				display: inline-block;
+  				padding: 0px;
+  				margin: 0px 5px;
+				border: 0px solid white;
+				border-radius: 30px;
+				background-color: white;
+				box-shadow: inset 0px 0px 10px #128cc9;
+				-webkit-box-shadow: inset 0px 0px 10px #128cc9;
+				min-width: 20px;
+				text-align: center;
+				width: 50px;
+				height: 50px;
+				position: relative;
 
-				@media screen and (max-width: 820px) {
-					margin-left: 10px;
+				div {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					border: 0px solid white;
+					border-radius: 30px;
+					background-color: #128cc9;
+					-webkit-transition: width 1s, height 1s, top 1s, left 1s;
+					transition: width: 1s, height 1s, top 1s, left 1s;
 				}
 
 				a {
+					width: 50px;
+					height: 50px;
+					text-decoration: none;
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					-webkit-transition: top 1s, left 1s;
+					transition: top 1s, left 1s;
+
 					span {
-						font-size: 26px;
-						color: @soft-grey;
-						text-decoration: none;
+						font-size: 1.3em;
+						line-height: 2em;
+						color: white;
+						-webkit-transition: color 1s;
+						transition: color 1s;
 					}
 				}
 
 				&:hover {
-					border-color: @sky-blue;
-
-					span {
-						color: @sky-blue;
+					div {
+						width: 0px;
+						height: 0px;
+						top: 25px;
+						left: 25px;
 					}
+					a {
+						color: white;
+						top: -25px;
+						left: -25px;
+						
+						span { color: #128cc9; }
+					}
+
 				}
-			}
+  			}
 		}
 	}
 
@@ -199,7 +275,7 @@ body {
 		}
 
 		.social-networks-wrapper {
-			.header-right-side(50px);
+			.header-right-side(30px);
 
 			@media screen and (max-width: 550px) {
 				padding-left: 0px;
