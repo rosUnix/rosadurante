@@ -8,9 +8,9 @@ module.exports = function (grunt) {
         'grunt-contrib-connect',
         'grunt-open'
 
-     ].forEach(grunt.loadNpmTasks);
+    ].forEach(grunt.loadNpmTasks);
 
-     grunt.initConfig({
+    grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
 
@@ -29,14 +29,21 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
+                    hostname: '0.0.0.0',
                     port: process.env.PORT || 5000,
+                    base: 'src'
+                }
+            },
+            dev: {
+                options: {
+                    port: 8000,
                     base: 'src'
                 }
             }
         },
 
         open: {
-            server: {
+            dev: {
                 path: 'http://0.0.0.0:8000'
             }
         },
@@ -47,8 +54,8 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('all', 'Compile and open', [
-        'connect:server', 'less:prod', 'open:server'
+    grunt.registerTask('dev', 'Compile and open', [
+        'connect:dev', 'less:prod', 'open:dev'
     ]);
     grunt.registerTask('prod', 'Compile and run server', [
         'less:prod', 'connect:server'
