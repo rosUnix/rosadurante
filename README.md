@@ -7,4 +7,3 @@ authors
 -------
 
 Rosa Durante (me@rosadurante.com)
-Pablo Recio (pablo@recio.me)
