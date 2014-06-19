@@ -1,0 +1,31 @@
+{
+  "name": "rosadurante",
+  "version": "0.2.0",
+  
+  "engines": {
+    "node": "0.10.x"
+  },
+
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/rosadurante/rosadurante.git"
+  },
+
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-less": "~0.7.0"
+  },
+
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-less": "~0.7.0"
+  },
+
+  "scripts": {
+    "postinstall": "grunt prod"
+  }
+}
