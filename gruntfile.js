@@ -5,8 +5,7 @@ module.exports = function (grunt) {
 
     [
         'grunt-contrib-less',
-        'grunt-contrib-connect',
-        'grunt-open'
+        'grunt-contrib-connect'
 
     ].forEach(grunt.loadNpmTasks);
 
@@ -38,14 +37,10 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     port: 8000,
-                    base: 'src'
+                    base: 'src',
+                    keepalive: true,
+                    open: 'http://localhost:8000'
                 }
-            }
-        },
-
-        open: {
-            dev: {
-                path: 'http://0.0.0.0:8000'
             }
         },
 
@@ -56,7 +51,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('dev', 'Compile and open', [
-        'connect:dev', 'less:prod', 'open:dev'
+        'less:prod', 'connect:dev'
     ]);
     grunt.registerTask('prod', 'Compile and run server', [
         'less:prod', 'connect:server'
