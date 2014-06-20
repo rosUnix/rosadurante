@@ -7,7 +7,7 @@
 @sky-blue: #128CC9;
 @orange: #F05E0C;
 @green-pistachio: #A6CA38;
-@green-pistachio-opacity: rgba(166, 202, 56, 0.25);
+@green-pistachio-opacity: rgba(166, 202, 56, 0.18);
 
 @extra-soft-grey: #f0f0f0;
 @soft-grey: #cccccc;
@@ -214,6 +214,7 @@ body {
 				font-size: 48px;
 				font-weight: normal;
 				color: @mid-grey;
+				text-shadow: 0.05em 0.05em @soft-grey;
 
 				&::first-letter { color: @primary-colour; }
 
@@ -332,6 +333,7 @@ body {
 					font-size: 32px;
 					font-weight: normal;
 					color: @primary-colour;
+					text-shadow: 0.05em 0.05em;
 
 					&:before {
 						content: "";
@@ -401,6 +403,7 @@ body {
 					margin: 2px;
 					span {
 						color: @primary-colour;
+						text-shadow: @primary-colour 0.01em 0.01em;
 					}
 				}
 			}
