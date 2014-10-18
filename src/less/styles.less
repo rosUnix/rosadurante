@@ -114,11 +114,7 @@ body {
 // Social networks
 
 .social-networks {
-
 	.no-list-style();
-	padding: 0px 10px;
-	text-align: center;
-	border-radius: 10px;
 
 	.social-networks--item {
 		.box-sizing (border-box);
@@ -193,116 +189,108 @@ body {
 	}
 }
 
-.header {
-	margin: 0px 30px;
+header {
+	padding: 0px 30px;
 	overflow: hidden;
 
-	.header--main {
-		.header-right-side(0px);
+	.header--email { display: none; }
 
-		.header--main--email { display: none; }
+	.header--full-name {
+		position: relative;
+		margin-top: 60px;
+		min-height: 60px;
+		border-bottom: 3px solid @soft-grey;
 
-		.header--full-name {
-			position: relative;
-			margin-top: 60px;
-			min-height: 60px;
-			border-bottom: 3px solid @soft-grey;
+		.header--full-name--first,
+		.header--full-name--last {
+			position: absolute;
+			margin: 0px;
+			bottom: 0;
 
-			.header--full-name--first,
-			.header--full-name--last {
-				margin: 0px;
-				position: absolute;
-				bottom: 0;
+			font-size: 48px;
+			font-weight: normal;
+			color: @mid-grey;
 
-				font-size: 48px;
-				font-weight: normal;
-				color: @mid-grey;
-
-				&::first-letter { color: @primary-colour; }
-			}
-
-			.header--full-name--last {
-				padding: 0;
-				left: 85px;
-				z-index: 5;
-			}
+			&::first-letter { color: @primary-colour; }
 		}
 
-		.header--position {
-			padding-top: 5px;
-
-			text-align: right;
-			font-size: 22px;
-			span { color: @primary-colour; }
-
-			@media screen and (max-width: @mobile-mq) {
-				width: 100%;
-			}
+		.header--full-name--last {
+			padding: 0;
+			left: 85px;
+			z-index: 5;
 		}
+	}
 
-		.header--social-networks {
-			.header-right-side (10px);
-			padding-left: 0;
-			margin-top: 0;
-			position: relative;
-			z-index: 1;
+	.header--position {
+		padding-top: 5px;
 
-			.social-networks {
-				position: absolute;
-				right: 0;
-				top: 70px;
+		text-align: right;
+		font-size: 22px;
 
-				// Changes. To display it smaller
-				.social-networks--item  {
-					padding: 5px;
-					margin: 0 2px;
-					height: 25px;
+		color: @primary-colour;
+
+		@media screen and (max-width: @mobile-mq) {
+			width: 100%;
+		}
+	}
+
+	.header--social-networks {
+		position: relative;
+		z-index: 1;
+
+		.social-networks {
+			position: absolute;
+			right: 0;
+			top: 70px;
+
+			// Changes. To display it smaller
+			.social-networks--item  {
+				.box-sizing(content-box);
+				padding: 5px;
+				margin: 0 2px;
+				height: 25px;
+				width: 25px;
+
+				.social-networks--link {
 					width: 25px;
-					.box-sizing(content-box);
+					height: 25px;
+					top: 5px;
+					left: 5px;
 
-					.social-networks--link {
-						width: 25px;
-						height: 25px;
-						top: 5px;
-						left: 5px;
-
-						.social-networks--icon {
-							font-size: 1.0em;
-							line-height: 1.1em;
-						}
-					}
-
-					&:hover .social-networks--innerblock {
-						top: 17px;
-						left: 17px;
-					}
-
-					&:hover .social-networks--link {
-						top: -12px;
-						left: -12px;
+					.social-networks--icon {
+						font-size: 1.0em;
+						line-height: 1.1em;
 					}
 				}
-			}
 
-			@media screen and (max-width: @mobile-mq) {
-				display: none;
+				&:hover .social-networks--innerblock {
+					top: 17px;
+					left: 17px;
+				}
+
+				&:hover .social-networks--link {
+					top: -12px;
+					left: -12px;
+				}
 			}
+		}
+
+		@media screen and (max-width: @mobile-mq) {
+			display: none;
 		}
 	}
 }
 
-.container {
+.content {
 	margin-top: 40px;
 	overflow: hidden;
 	clear: both;
 
-	.content { overflow: hidden; }
-
-	.content .description-wrapper {
+	.description-wrapper {
 		margin: 0 auto 40px;
 		max-width: 60%;
 
-		.description p {
+		p {
 			margin: 0px;
 
 			font-size: 24px;
@@ -313,7 +301,7 @@ body {
 
 	}
 
-	.content section {
+	section {
 		.box-sizing (border-box);
 		margin: 10px 0;
 		padding: 0px 30px;
