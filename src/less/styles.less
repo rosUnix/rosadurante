@@ -72,16 +72,6 @@
 	transition: @trans1, @trans2, @trans3, @trans4;
 }
 
-.header-right-side (@margin-top) {
-	.box-sizing(border-box);
-	display: block;
-	float: left;
-	max-width: 100%;
-	width: 100%;
-	margin-top: @margin-top;
-	padding-left: 0px;
-}
-
 .no-list-style () {
 	list-style: none;
 	padding: 0;
@@ -189,7 +179,7 @@ body {
 	}
 }
 
-header {
+.header {
 	padding: 0px 30px;
 	overflow: hidden;
 
@@ -286,22 +276,17 @@ header {
 	overflow: hidden;
 	clear: both;
 
-	.description-wrapper {
+	.content--description {
 		margin: 0 auto 40px;
 		max-width: 60%;
 
-		p {
-			margin: 0px;
+		font-size: 24px;
+		text-align: center;
 
-			font-size: 24px;
-			text-align: center;
-
-			span { color: @primary-colour; }
-		}
-
+		.content--description__highlight { color: @primary-colour; }
 	}
 
-	section {
+	.content--section {
 		.box-sizing (border-box);
 		margin: 10px 0;
 		padding: 0px 30px;
@@ -313,157 +298,133 @@ header {
 			width: 100%;
 		}
 
-		header {
-			margin: 0;
+		.content--section--title {
+			padding: 0px;
+			margin: 0px;
+			bottom: 0;
 
-			h3 {
-				padding: 0px;
-				margin: 0px;
-				bottom: 0;
+			font-size: 32px;
+			font-weight: normal;
+			color: @primary-colour;
 
-				font-size: 32px;
-				font-weight: normal;
-				color: @primary-colour;
+			&:before {
+				content: "";
+				margin-right: 10px;
+				display: inline-block;
+				height: 3px;
+				width: 90px;
 
-				&:before {
-					content: "";
-					margin-right: 10px;
-					display: inline-block;
-					height: 3px;
-					width: 90px;
-
-					background-color: @primary-colour;
-					vertical-align: middle;
-				}
+				background-color: @primary-colour;
+				vertical-align: middle;
 			}
 		}
 
-		ul {
+		.content--section--list {
 			.no-list-style ();
 		}
+	}
 
-		.experience {
+	.experience {
+		.experience--list {
 			margin-top: 20px;
-			a { text-decoration: underline; }
 
-			li {
+			.experience--link { text-decoration: underline; }
+
+			.experience--item {
 				margin-bottom: 10px;
 
-				label { font-size: 16px; }
-
-				p {
+				.experience--place,
+				.experience--position,
+				.experience--description {
 					margin: 5px 0;
 					padding-left: 10px;
 					display: inline-block;
 				}
 
-				.highlight { color: @primary-colour; }
-				.description { font-size: 95%; }
+				.experience--place span { color: @primary-colour; }
+				.experience--description { font-size: 95%; display: block; }
 			}
 		}
+	}
 
-		.skills {
-			margin-top: 20px;
+	.skills {
 
-			h3 {
-				font-weight: normal;
-				border-bottom: 1px solid @soft-grey;
-				color: @soft-grey;
-			}
+		.skills--section--title {
+			font-weight: normal;
+			border-bottom: 1px solid @soft-grey;
+			color: @soft-grey;
+		}
 
-			li {
-				margin-bottom: 4px;
+		.skills--section--list {
+			.no-list-style();
+
+			.skills--section--item {
+				margin: 0 0 4px 0;
+				padding: 2px 7px;
 				display: inline-block;
-
-				p {
-					margin: 0px;
-					padding: 2px 7px;
-
-					background-color: @extra-soft-grey;
-				}
+				
+				background-color: @extra-soft-grey;
 			}
 		}
+	}
 
-		.about {
-			margin-top: 20px;
-			padding: 10px;
+	.myself--description {
+		margin-top: 20px;
+		padding: 10px;
 
-			box-shadow: inset 0 0 25px #fff;
-			background-color: @primary-colour-opacity;
-			p {
-				margin: 2px;
-				span {
-					color: @primary-colour;
-					text-shadow: @primary-colour 0.01em 0.01em;
-				}
+		box-shadow: inset 0 0 25px #fff;
+		background-color: @primary-colour-opacity;
+		.myself--description--paragraph {
+			margin: 2px;
+			.myself--description__highlight {
+				color: @primary-colour;
+				text-shadow: @primary-colour 0.01em 0.01em;
 			}
 		}
 	}
 }
 
-footer {
+.footer {
 	clear: both;
 	margin-top: 50px;
 
-	.copyright {
+	.footer--social-networks { text-align: center; }
+
+	.footer--copyright {
 		margin-top: 10px;
+		padding-right: 30px;
 
 		text-align: right;
-
-		span {
-			padding-right: 30px;
-
-			font-size: 14px;
-			color: @mid-grey;
-		}
+		font-size: 14px;
+		color: @mid-grey;
 	}
 }
 
 @media print {
 
-	scale: 100%;
-	font-size: 90%;
-
-	header .main-name {
-		margin-top: 0px;
-		min-height: 210px;
-
-		.printing {
-			display: block;
-
-			span {
-				display: block;
-
-				text-align: right;
-				color: @primary-colour;
-			}
-		}
+	body {
+		scale: 100%;
+		font-size: 90%;
 	}
 
-	header .social-networks-wrapper,
-	.social-networks-wrapper {
+	.header .header--email {
+		display: block;
+	}
+
+	.social-networks {
 		display: none;
 	}
 
-	.container {
-
-		.content article {
-			.description p {
-				font-size: 18px;
-			}
-		}
-
-		.content section {
-			width: 100%;
-
-			.about {
-				.box-shadow(none);
-				background-color: white;
-			}
-		}
+	.content .content--section {
+		width: 100%;
 	}
 
-	footer .copyright {
+	.myself .myself--description {
+		.box-shadow(none);
+		background-color: white;
+	}
+
+	.footer .footer--copyright {
 		display: none;
 	}
 }

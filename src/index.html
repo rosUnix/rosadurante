@@ -29,8 +29,8 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <div class="printing header--email">
+  <header class="header">
+    <div class="header--email">
       <span>me@rosadurante.com</span>
     </div>
 
@@ -87,181 +87,169 @@
   <!-- CONTAINER -->
   <div class="content">
 
-    <!-- <div class="content-wrapper"> -->
-      <!-- <div class="content"> -->
-        <div class="description-wrapper content--description">
-          <!-- <div class="description"> -->
-            <p>
-              'Hi there! I am an enthusiastic <span>frontend developer</span> currently living in <span>London, UK</span>. I really love to code in <span>JavaScript</span> whilst using <span>CSS</span> to get a great look &amp; feel. If you want to know more about me&hellip; keep reading!'
-            </p>
-          <!-- </div> -->
-        </div>
+    <p class="content--description">
+      'Hi there! I am an enthusiastic <span class="content--description__highlight">frontend developer</span> currently living in <span class="content--description__highlight">London, UK</span>. I really love to code in <span class="content--description__highlight">JavaScript</span> whilst using <span class="content--description__highlight">CSS</span> to get a great look &amp; feel. If you want to know more about me&hellip; keep reading!'
+    </p>
         
-        <section class="experience-wrapper content--experience">
-          <header><h3>Experience</h3></header>
-          <ul class="experience experience--list">
-            <li class="experience--item">
-              <span class="experience--date">Nov 2013 - Jul 2014</span>
-              <p class="highlight experience--link__hightlight">
-                <a href="http://www.yourvine.com/" target="_blank">Yourvine Ltd</a>
-              </p>
-              <p class="experience--position">Frontend Developer</p>
-              <p class="description experience--description">
-                I started working at Yourvine as a Frontend Engineer, building <a href="http://www.yourvine.com/" target="_blank">yourvine.com</a>. The platform is a single-page web application which is written using AngularJS in frontend and Python/Django as backend, following a strong OO programming and a service-orientation design pattern. I have been working in a very small team using Agile methodology to organise and plan every week. I also made a large amount of contributions to the backend improving my skills with Python/Django.
-              </p>
-            </li>
-            <li class="experience--item">
-              <span class="experience--date">Feb 2012 - Nov 2013</span>
-              <p class="hightlight experience--link__hightlight">
-                <a href="http://www.hogarthww.com/" target="_blank">Hogarth Worldwide Ltd</a>
-              </p>
-              <p class="experience--position">Frontend Developer</p>
-              <p class="description experience--description">
-                As a frontend developer I worked on several internal management web applications and public web applications like Zonza.tv. Whilst working on these projects we enhanced the plataforms looks and feel using technologies such as HTML5, CSS3, Javascript and frameworks JS like jQuery, RequireJS and BackboneJS. Also I provided my point of view about the design of both platforms. I was also part of the team who built <a href="http://www.copycentral.co.uk">Copycentral</a>, a new advertising clearance system, being its lead frontend developer.
-              </p>
-            </li>
-            <li class="experience--item">
-              <span class="experience--date">Jun 2011 - Feb 2012</span>
-              <p class="hightlight experience--link__hightlight"><span>Zocolab project</span></p>
-              <p class="experience--position">Frontend and Android developer</p>
-              <p class="description experience--description">
-                As co-founder of this project of start-up, I worked on several different aspects; firstly, I did the design and front-end developement of our web page, using Django as a base, and tools such as jQuery, jQuery Mobile or Twitter Bootstrap. Also, I did some work on Android development, focusing on some crucial proofs of concept ideas.
-              </p>
-            </li>
-            <li class="experience--item">
-              <span class="experience--date">Jun 2010 - May 2011</span>
-              <p class="hightlight experience--link__hightlight">
-                <a href="http://www.yaco.es/" target="_blank">Yaco Sistemas SL</a>
-              </p>
-              <p class="experience--position">QA developer</p>
-              <p class="description experience--description">
-                As part of my job, I participated on some Django complex projects, where several system had to operate between them. For that, I wrote a lot of unit tests for each system, and also some integration tests, ensuring that the REST APIs was working properly. In addition, I also did some work as front-end testing, using tools like Selenium IDE.
-              </p>
-            </li>
-          </ul>
-        </section>
-    
-        <section class="skills-wrapper content-skills">
-          <header><h3>Skills</h3></header>
-          <div class="skills">
+    <section class="content--section experience">
+      <header class="content--section--header experience--header">
+        <h3 class="content--section--title">Experience</h3>
+      </header>
 
-            <div class="skills--section">
-              <h3 class="skills--section--title">Javascript</h3>
-              <ul class="skills--section--list">
-                <li><p>AngularJS</p></li>
-                <li><p>BackboneJS</p></li>
-                <li><p>jQuery</p></li>
-                <li><p>RequireJS</p></li>
-                <li><p>OO Programming</p></li>
-                <li><p>Jasmine</p></li>
-                <li><p>Karma</p></li>
-                <li><p>Grunt</p></li>
-                <li><p>Unit Tests</p></li>
-                <li><p>E2E Tests</p></li>
-                <li><p>Modernizr</p></li>
-              </ul>
-            </div>
+      <ul class="content--section--list experience--list">
+        <li class="experience--item">
+          <span class="experience--date">Nov 2013 - Jul 2014</span>
+          <p class="experience--place">
+            <a class="experience--link" href="http://www.yourvine.com/" target="_blank">Yourvine Ltd</a>
+          </p>
+          <p class="experience--position">Frontend Developer</p>
+          <p class="description experience--description">
+            I started working at Yourvine as a Frontend Engineer, building <a class="experience--link" href="http://www.yourvine.com/" target="_blank">yourvine.com</a>. The platform is a single-page web application which is written using AngularJS in frontend and Python/Django as backend, following a strong OO programming and a service-orientation design pattern. I have been working in a very small team using Agile methodology to organise and plan every week. I also made a large amount of contributions to the backend improving my skills with Python/Django.
+          </p>
+        </li>
 
-            <div class="skills--section">
-              <h3 class="skills--section--title">HTML/CSS</h3>
-              <ul class="skills--section--list">
-                <li><p>SASS</p></li>
-                <li><p>Twitter Bootstrap</p></li>
-                <li><p>HTML5</p></li>
-                <li><p>LESS</p></li>
-                <li><p>CSS3</p></li>
-              </ul>
-            </div>
+        <li class="experience--item">
+          <span class="experience--date">Feb 2012 - Nov 2013</span>
+          <p class="experience--place">
+            <a class="experience--link" href="http://www.hogarthww.com/" target="_blank">Hogarth Worldwide Ltd</a>
+          </p>
+          <p class="experience--position">Frontend Developer</p>
+          <p class="description experience--description">
+            As a frontend developer I worked on several internal management web applications and public web applications like Zonza.tv. Whilst working on these projects we enhanced the plataforms looks and feel using technologies such as HTML5, CSS3, Javascript and frameworks JS like jQuery, RequireJS and BackboneJS. Also I provided my point of view about the design of both platforms. I was also part of the team who built <a class="experience--link" href="http://www.copycentral.co.uk">Copycentral</a>, a new advertising clearance system, being its lead frontend developer.
+          </p>
+        </li>
 
-            <div class="skills--section">
-              <h3 class="skills--section--title">Backend</h3>
-              <ul class="skills--section--list">
-                <li><p>Python</p></li>
-                <li><p>Django</p></li>
-                <li><p>REST API</p></li>
-                <li><p>Unit Tests</p></li>
-                <li><p>Integration Tests</p></li>
-              </ul>
-            </div>
+        <li class="experience--item">
+          <span class="experience--date">Jun 2011 - Feb 2012</span>
+          <p class="experience--place"><span>Zocolab project</span></p>
+          <p class="experience--position">Frontend and Android developer</p>
+          <p class="description experience--description">
+            As co-founder of this project of start-up, I worked on several different aspects; firstly, I did the design and front-end developement of our web page, using Django as a base, and tools such as jQuery, jQuery Mobile or Twitter Bootstrap. Also, I did some work on Android development, focusing on some crucial proofs of concept ideas.
+          </p>
+        </li>
 
-            <div class="skills--section">
-              <h3 class="skills--section--title">Non-code skills</h3>
-              <ul class="skills--section--list">
-                <li><p>Git</p></li>
-                <li><p>Agile/Scrum</p></li>
-                <li><p>UX</p></li>
-              </ul>
-            </div>
-      
-          </div>
-        </section>
+        <li class="experience--item">
+          <span class="experience--date">Jun 2010 - May 2011</span>
+          <p class="experience--place">
+            <a class="experience--link" href="http://www.yaco.es/" target="_blank">Yaco Sistemas SL</a>
+          </p>
+          <p class="experience--position">QA developer</p>
+          <p class="description experience--description">
+            As part of my job, I participated on some Django complex projects, where several system had to operate between them. For that, I wrote a lot of unit tests for each system, and also some integration tests, ensuring that the REST APIs was working properly. In addition, I also did some work as front-end testing, using tools like Selenium IDE.
+          </p>
+        </li>
+      </ul>
+    </section>
 
-        <section class="content-myself">
-          <div class="myself">
-            <header class="myself--header">
-              <h3 class="myself--header--title">About me!</h3>
-            </header>
-            <div class="about myself--about">
-              <p>I am a <span>music lover</span>. I enjoy all types of music but I am a <span>metal head at heart</span>. My favorite groups of all time include <span>Megadeth</span>, <span>Foo Fighters</span> and <span>AC/DC</span>.</p>
+    <section class="content--section skills">
+      <header class="content--section--header skills--header">
+        <h3 class="content--section--title">Skills</h3>
+      </header>
 
-              <p>A year ago I started to introduce myself to <span>photograpy</span>. I don't spend too much time on it, mostly when I <span>travel</span> (which I try to every chance I get).</p>
-
-              <p>And.. what would the thing I spend tons of time doing? Watching <span>Tv series</span>. I can't get rid of them. I have most recently been watching <span>Game of thrones</span>, <span>24</span>, <span>True blood</span> but, my favourite couldn't be any other than <span>Breaking bad!</span>.</p>
-            </div>
-          </div>
-        </section>
-      <!-- </div> -->
-    <!-- </div> -->
-
-  </div>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrapper-footer footer">
-      <div class="social-networks-wrapper footer--social-networks">
-        <ul class="social-networks">
-          <li class="linkedin">
-            <div>
-              <a target="_blank" href="http://www.linkedin.com/in/rdurantelerate">
-                <span class="icon-linkedin"></span>
-              </a>
-            </div>
-          </li>
-          <li class="github">
-            <div>
-              <a target="_blank" href="http://github.com/rosadurante">
-                <span class="icon-github"></span>
-              </a>
-            </div>
-          </li>
-          <li class="twitter">
-            <div>
-              <a target="_blank" href="http://twitter.com/rosunix">
-                <span class="icon-twitter"></span>
-              </a>
-            </div>
-          </li>
-          <li class="camera">
-            <div>
-              <a target="_blank" href="http://www.flickr.com/photos/rosadurante">
-                <span class="icon-camera"></span>
-              </a>
-            </div>
-          </li>
-          <li class="envelope-alt">
-            <div>
-              <a target="_blank" href="mailto:me@rosadurante.com">
-                <span class="icon-envelope-alt"></span>
-              </a>
-            </div>
-          </li>
+      <div class="skills--section">
+        <h3 class="skills--section--title">Javascript</h3>
+        <ul class="skills--section--list">
+          <li class="skills--section--item">AngularJS</li>
+          <li class="skills--section--item">BackboneJS</li>
+          <li class="skills--section--item">jQuery</li>
+          <li class="skills--section--item">RequireJS</li>
+          <li class="skills--section--item">OO Programming</li>
+          <li class="skills--section--item">Jasmine</li>
+          <li class="skills--section--item">Karma</li>
+          <li class="skills--section--item">Grunt</li>
+          <li class="skills--section--item">Unit Tests</li>
+          <li class="skills--section--item">E2E Tests</li>
+          <li class="skills--section--item">Modernizr</li>
         </ul>
       </div>
-      <div class="copyright">
-        <span>&copy; 2012-2014 Rosa Durante</span>
+
+      <div class="skills--section">
+        <h3 class="skills--section--title">HTML/CSS</h3>
+        <ul class="skills--section--list">
+          <li class="skills--section--item">SASS</li>
+          <li class="skills--section--item">Twitter Bootstrap</li>
+          <li class="skills--section--item">HTML5</li>
+          <li class="skills--section--item">LESS</li>
+          <li class="skills--section--item">CSS3</li>
+        </ul>
       </div>
-    </div>
+
+      <div class="skills--section">
+        <h3 class="skills--section--title">Backend</h3>
+        <ul class="skills--section--list">
+          <li class="skills--section--item">Python</li>
+          <li class="skills--section--item">Django</li>
+          <li class="skills--section--item">REST API</li>
+          <li class="skills--section--item">Unit Tests</li>
+          <li class="skills--section--item">Integration Tests</li>
+        </ul>
+      </div>
+
+      <div class="skills--section">
+        <h3 class="skills--section--title">Non-code skills</h3>
+        <ul class="skills--section--list">
+          <li class="skills--section--item">Git</li>
+          <li class="skills--section--item">Agile/Scrum</li>
+          <li class="skills--section--item">UX</li>
+        </ul>
+      </div>
+  
+    </section>
+
+    <section class="content--section myself">
+      <header class="content--section--header myself--header">
+        <h3 class="content--section--title">About me!</h3>
+      </header>
+      <div class="myself--description">
+        <p class="myself--description--paragraph">I am a <span class="myself--description__highlight">music lover</span>. I enjoy all types of music but I am a <span class="myself--description__highlight">metal head at heart</span>. My favorite groups of all time include <span class="myself--description__highlight">Megadeth</span>, <span class="myself--description__highlight">Foo Fighters</span> and <span class="myself--description__highlight">AC/DC</span>.</p>
+
+        <p class="myself--description--paragraph">A year ago I started to introduce myself to <span class="myself--description__highlight">photograpy</span>. I don't spend too much time on it, mostly when I <span class="myself--description__highlight">travel</span> (which I try to every chance I get).</p>
+
+        <p class="myself--description--paragraph">And.. what would the thing I spend tons of time doing? Watching <span class="myself--description__highlight">Tv series</span>. I can't get rid of them. I have most recently been watching <span class="myself--description__highlight">Game of thrones</span>, <span class="myself--description__highlight">24</span>, <span class="myself--description__highlight">True blood</span> but, my favourite couldn't be any other than <span class="myself--description__highlight">Breaking bad!</span>.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <ul class="social-networks footer--social-networks">
+      <li class="social-networks--item">
+        <div class="social-networks--innerblock">
+          <a class="social-networks--link" target="_blank" href="http://www.linkedin.com/in/rdurantelerate">
+            <span class="social-networks--icon icon-linkedin"></span>
+          </a>
+        </div>
+      </li>
+      <li class="social-networks--item">
+        <div class="social-networks--innerblock">
+          <a class="social-networks--link" target="_blank" href="http://github.com/rosadurante">
+            <span class="social-networks--icon icon-github"></span>
+          </a>
+        </div>
+      </li>
+      <li class="social-networks--item">
+        <div class="social-networks--innerblock">
+          <a class="social-networks--link" target="_blank" href="http://twitter.com/rosunix">
+            <span class="social-networks--icon icon-twitter"></span>
+          </a>
+        </div>
+      </li>
+      <li class="social-networks--item">
+        <div class="social-networks--innerblock">
+          <a class="social-networks--link" target="_blank" href="http://www.flickr.com/photos/rosadurante">
+            <span class="social-networks--icon icon-camera"></span>
+          </a>
+        </div>
+      </li>
+      <li class="social-networks--item">
+        <div class="social-networks--innerblock">
+          <a class="social-networks--link" target="_blank" href="mailto:me@rosadurante.com">
+            <span class="social-networks--icon icon-envelope-alt"></span>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <div class="footer--copyright">&copy; 2012-2014 Rosa Durante</div>
   </footer>
 
   <script>
